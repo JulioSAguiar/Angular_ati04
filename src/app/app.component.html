@@ -1,0 +1,36 @@
+<div class="main">
+  
+  <h1>Lista de Tarefas</h1>
+
+  <div class="nInp">
+    <app-inp>
+      <input StyledInput 
+      placeholder="Adicione uma atividade" 
+      #inputAtividade
+      (keyup.enter)="addAfazer(inputAtividade.value)"
+      >
+    </app-inp>
+    <app-btn
+    (eventoPersonalizado)="addAfazer(inputAtividade.value)"
+    >
+    </app-btn>
+  </div>
+
+  <div class="container">
+    <app-comp 
+    *ngFor="let atividade of afazeres; let i = index" 
+    (eventoDelete)="delAfazer(i,1)"
+    >
+      <div class="atividade">{{atividade}}</div>
+    </app-comp>
+  </div>
+   
+  <div class="apagarTudo">
+    <p> Você tem {{afazeres.length}} atividades pendentes </p>
+    <app-btn_del 
+    (eventDeleteAll)="delTudo(0, afazeres.length)" 
+    >
+    </app-btn_del>
+  </div>
+  
+</div>

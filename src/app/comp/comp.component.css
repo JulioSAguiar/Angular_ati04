@@ -1,0 +1,11 @@
+.inptAti{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.inpA{
+    width: 60px;
+    margin-left: 30px;
+
+}
